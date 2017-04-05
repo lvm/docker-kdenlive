@@ -6,29 +6,51 @@ A container for [kdenlive](https://kdenlive.org/), a free and open-source video 
 
 ## Install
 
+###Stable
 ```bash
 $ docker pull lvm23/kdenlive
 ```
+###Unstable
+```bash
+$ docker pull ark74/kdenlive
+```
+(this might change in the future)
 
 or 
+## Build
 
+###Stable
 ```bash
 $ git clone https://github.com/lvm/docker-kdenlive && \
   cd docker-kdenlive && \
   docker build -t kdenlive .
 ```
 
+###Unstable
+```bash
+$ git clone https://github.com/Ark74/docker-kdenlive && \
+  cd docker-kdenlive && \
+  docker build -t kdenlive .
+```
+
 ## Run
 
+
+###Stable
 ```bash
-$ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl kdenlive
+$ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl kml2/kdenlive
+```
+
+###Unstable
+```bash
+$ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl ark74/kdenlive
 ```
   
 
 `-v $HOME/videos:/videos` is used to mount the container's `/videos` directory to the host `$HOME/kdenlive` directory, you can choose other directory.    
 Note: probably you *might* also need to execute `xhost local:root` or `xhost +my-computer-hostname.local`.
 
-### Devices
+## Devices
 You might wanna use the devices options to enable sound and hw acceletarion on graphic cards (Intel only), since you'll be editiong video on this software:
 
  `--device=/dev/dri`
