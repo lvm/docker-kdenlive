@@ -2,9 +2,9 @@
 
 A container for [kdenlive](https://kdenlive.org/), a free and open-source video editor for GNU/Linux.
 
-# how to 
+# How to 
 
-## install
+## Install
 
 ```bash
 $ docker pull lvm23/kdenlive
@@ -18,7 +18,7 @@ $ git clone https://github.com/lvm/docker-kdenlive && \
   docker build -t kdenlive .
 ```
 
-## run
+## Run
 
 ```bash
 $ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl kdenlive
@@ -27,3 +27,14 @@ $ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DIS
 
 `-v $HOME/videos:/videos` is used to mount the container's `/videos` directory to the host `$HOME/kdenlive` directory, you can choose other directory.    
 Note: probably you *might* also need to execute `xhost local:root` or `xhost +my-computer-hostname.local`.
+
+### Devices
+You might wanna use the devices options to enable sound and hw acceletarion on graphic cards (Intel only), since you'll be editiong video on this software:
+
+ `--device=/dev/dri`
+ 
+Also sound is an option, for ALSA:
+
+ `--device=/dev/snd`
+ 
+note that sound might get disabled on your host machine until you close the containter.
