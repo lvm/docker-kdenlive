@@ -1,4 +1,4 @@
-# docker-kdenlive
+# Debian docker-kdenlive
 
 A container for [kdenlive](https://kdenlive.org/), a free and open-source video editor for GNU/Linux.
 
@@ -6,11 +6,11 @@ A container for [kdenlive](https://kdenlive.org/), a free and open-source video 
 
 ## Install
 
-### Stable
+### Debian Stable
 ```bash
 $ docker pull lvm23/kdenlive
 ```
-### Unstable
+### Debian Unstable
 ```bash
 $ docker pull ark74/kdenlive
 ```
@@ -19,14 +19,14 @@ $ docker pull ark74/kdenlive
 or 
 ## Build
 
-### Stable
+### Debian Stable
 ```bash
 $ git clone https://github.com/lvm/docker-kdenlive && \
   cd docker-kdenlive && \
   docker build -t kdenlive .
 ```
 
-### Unstable
+### Debian Unstable
 ```bash
 $ git clone https://github.com/Ark74/docker-kdenlive && \
   cd docker-kdenlive && \
@@ -36,12 +36,12 @@ $ git clone https://github.com/Ark74/docker-kdenlive && \
 ## Run
 
 
-### Stable
+### Debian Stable
 ```bash
 $ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl kml2/kdenlive
 ```
 
-### Unstable
+### Debian Unstable
 ```bash
 $ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DISPLAY=unix$DISPLAY --name knl ark74/kdenlive
 ```
