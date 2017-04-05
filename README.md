@@ -51,7 +51,7 @@ $ docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -v $HOME/Videos:/videos -e DIS
 Note: probably you *might* also need to execute `xhost local:root` or `xhost +my-computer-hostname.local`.
 
 ## Devices
-You might wanna use the devices options to enable sound and hw acceletarion on graphic cards (Intel only), since you'll be editiong video on this software:
+You might wanna use the device options to enable sound and hw acceletarion on graphic cards (Intel only), since you'll be editing video on this software:
 
  `--device=/dev/dri`
  
