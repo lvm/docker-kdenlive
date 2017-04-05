@@ -59,4 +59,4 @@ Also sound is an option, for ALSA:
 
  `--device=/dev/snd`
  
-note that sound might get disabled on your host machine until you close the containter.
+note that sound might get disabled on your host machine until you close the container.
