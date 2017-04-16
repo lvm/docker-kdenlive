@@ -30,7 +30,7 @@ RUN apt update \
         libx11-data \
         libxau6 \
         libxcb1 \
-        libxdmcp6
+        libxdmcp6 \
 	--no-install-recommends \
 	&& apt clean \
 	&& rm -rf /var/lib/apt/lists/* \
